@@ -1,20 +1,25 @@
+---
+const pageTitle = "Мой блог";
+--- 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <a href="/">Главная</a>
     <a href="/about/">О сайте</a>
     <a href="/blog/">Блог</a>
 
-    <h1>Обо мне</h1>
-    <h2>... и моем новом сайте на Astro!</h2>
-    <h1>Мой сайт на Astro</h1>
     <h1>Это блог</h1>
+    <ul>
+      <li><a href="/posts/post-1/">Пост 1</a></li>
+      <li><a href="/posts/post-2/">Пост 2</a></li>
+      <li><a href="/posts/post-3/">Пост 3</a></li>
+    </ul>
     <h2>... и моем новом сайте на Astro!</h2>
 
     <p>
