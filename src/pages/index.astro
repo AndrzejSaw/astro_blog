@@ -1,7 +1,10 @@
 ---
-import '../styles/global.css';
-const pageTitle = "Главная страница";
---- 
+import '../styles/global.css'
+import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro';
+const pageTitle = 'Главная страница'
+---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,9 +14,7 @@ const pageTitle = "Главная страница";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Главная</a>
-    <a href="/about/">О сайте</a>
-	<a href="/blog/">Блог</a>
+    <Navigation />
 
     <h1>Обо мне</h1>
     <h2>... и моем новом сайте на Astro!</h2>
@@ -22,5 +23,6 @@ const pageTitle = "Главная страница";
     <h2>Getting Started</h2>
     <h3>Documentation</h3>
     <h4>Learn</h4>
+        <Footer />
   </body>
 </html>

@@ -1,7 +1,11 @@
 ---
-import '../styles/global.css';
-const pageTitle = "Мой блог";
---- 
+import '../styles/global.css'
+import Navigation from '../components/Navigation.astro'
+import Footer from '../components/Footer.astro';
+
+const pageTitle = 'Мой блог'
+---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,9 +15,7 @@ const pageTitle = "Мой блог";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Главная</a>
-    <a href="/about/">О сайте</a>
-    <a href="/blog/">Блог</a>
+    <Navigation />
 
     <h1>Это блог</h1>
     <ul>
@@ -32,5 +34,6 @@ const pageTitle = "Мой блог";
       Сайт будет обновляться по мере прохождения учебника, так что заходите сюда
       снова и следите за моим прогрессом!
     </p>
+        <Footer />
   </body>
 </html>
