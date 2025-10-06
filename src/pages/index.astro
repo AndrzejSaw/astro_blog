@@ -1,28 +1,97 @@
----
-import '../styles/global.css'
-import Navigation from '../components/Navigation.astro'
+﻿---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-const pageTitle = 'Главная страница'
----
 
-<html lang="en">
+const pageTitle = 'Личный блог о фронтенде и Astro';
+const description = 'Заметки о работе с Astro, современном фронтенде и Tailwind CSS.';
+
+const postImportResult = import.meta.glob('./posts/*.md', { eager: true });
+const posts = (Object.values(postImportResult) as Array<
+  import('astro').MarkdownInstance<Record<string, unknown>>
+>)
+  .sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate))
+  .slice(0, 3);
+
+const highlights = [
+  {
+    title: 'Практика Astro',
+    text: 'Исследую гибридный рендеринг и объясняю, как собирать быстрые сайты на Astro.',
+  },
+  {
+    title: 'Компоненты и дизайн-системы',
+    text: 'Экспериментирую с Tailwind CSS, делюсь паттернами для переиспользуемых UI-блоков.',
+  },
+  {
+    title: 'Рабочие заметки',
+    text: 'Пишу про процессы, инструменты и организацию работы фронтенд-команды.',
+  },
+];
+
+const formatDate = (value: Date | string) =>
+  new Date(value).toLocaleDateString('ru-RU', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+---
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <meta name="description" content={description} />
   </head>
   <body>
     <Navigation />
 
-    <h1>Обо мне</h1>
-    <h2>... и моем новом сайте на Astro!</h2>
-    <h1>Astro</h1>
-    <h1>Welcome to Astro!</h1>
-    <h2>Getting Started</h2>
-    <h3>Documentation</h3>
-    <h4>Learn</h4>
-        <Footer />
+    <main>
+      <section>
+        <h1>Привет! Я собираю цифровые истории на Astro</h1>
+        <p>
+          Этот блог — пространство для практических заметок о современном фронтенде,
+          производительности и дизайне цифровых продуктов. Здесь я делюсь выбором инструментов,
+          полезными ссылками и рабочими экспериментами.
+        </p>
+      </section>
+
+      <section>
+        <h2>О чём пишу</h2>
+        <ul>
+          {highlights.map((item) => (
+            <li>
+              <strong>{item.title}.</strong> {item.text}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Свежие публикации</h2>
+        <ul>
+          {posts.map((post) => {
+            const date = new Date(post.frontmatter.pubDate as string | number | Date);
+            return (
+              <li>
+                <article>
+                  <h3>
+                    <a href={post.url}>{post.frontmatter.title}</a>
+                  </h3>
+                  <p>{post.frontmatter.description}</p>
+                  <time datetime={date.toISOString()}>{formatDate(date)}</time>
+                </article>
+              </li>
+            );
+          })}
+        </ul>
+        <p>
+          Больше заметок смотрите в разделе <a href="/blog/">«Блог»</a>.
+        </p>
+      </section>
+    </main>
+
+    <Footer />
   </body>
 </html>

@@ -1,47 +1,39 @@
-# Astro Starter Kit: Minimal
+﻿# Личный блог на Astro
 
-```sh
-npm create astro@latest -- --template minimal
+Этот репозиторий — русскоязычный блог о фронтенде, построенный на Astro 5 и Tailwind CSS. Здесь собраны практические статьи, страницы с паттернами интерфейсов и демонстрация компонентов, которые можно переиспользовать в своих проектах.
+
+## Что внутри
+
+- **Главная** — приветствие, подборка направлений и ссылки на свежие публикации.
+- **Блог** — лента статей о работе с Astro, деплое и продуктах.
+- **Обо мне** — страница с профилем автора, навыками и интересами.
+- **Песочницы** — две страницы с Tailwind-блоками: от карточек и таймлайнов до форм и таблиц.
+- **Посты (`src/pages/posts/`)** — Markdown-файлы с метаданными и содержимым статей.
+
+Структура проекта:
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+├─ public/          — статичные ассеты
+├─ src/
+│  ├─ components/   — навигация, футер, соцсети
+│  ├─ pages/        — страницы и Markdown-посты
+│  └─ styles/       — глобальные стили и Tailwind
+├─ astro.config.mjs — конфигурация Astro + Tailwind
+└─ package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Как запустить
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm install
+npm run dev     # запуск локального сервера на http://localhost:4321
+npm run build   # сборка продакшн-версии в папку dist/
+npm run preview # предпросмотр собранного сайта
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Полезные ссылки
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Документация Astro: https://docs.astro.build
+- Tailwind CSS: https://tailwindcss.com
+- Сообщество Astro в Discord: https://astro.build/chat

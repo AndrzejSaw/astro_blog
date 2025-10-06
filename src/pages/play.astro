@@ -1,0 +1,205 @@
+﻿---
+import '../styles/tailwind.css';
+---
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Игровая площадка Tailwind</title>
+    <meta
+      name="description"
+      content="Коллекция Tailwind-компонентов: шапка, карточки, таблицы и модуль обратной связи."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-dgN6/1xg4A3QXxN9PoCYh6gMP4fJtugYDyG1D0Lk9iE0W5yCz8c0vV6eZslIFpQwyB9XHZHfSwxGVdYbF4iJ3w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900">
+    <div class="mx-auto flex max-w-6xl flex-col gap-16 p-6 sm:p-10">
+      <header class="rounded-3xl bg-gradient-to-r from-violet-600 via-fuchsia-500 to-rose-500 p-10 text-white shadow-xl">
+        <h1 class="text-4xl font-bold sm:text-5xl">Tailwind Playground</h1>
+        <p class="mt-4 max-w-2xl text-lg text-violet-100">
+          Страница для быстрого тестирования Tailwind-паттернов. Здесь я собираю готовые блоки,
+          которыми делюсь с командой при разработке UI.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-violet-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-violet-50"
+            href="/"
+          >
+            <i class="fa-solid fa-house"></i>
+            На главную
+          </a>
+          <a
+            class="inline-flex items-center gap-2 rounded-full border border-white/70 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            href="/blog/"
+          >
+            <i class="fa-solid fa-book-open"></i>
+            В блог
+          </a>
+        </div>
+      </header>
+
+      <section class="grid gap-6 md:grid-cols-2">
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-xl font-semibold">Карточка продукта</h2>
+          <p class="mt-2 text-sm text-slate-600">
+            Используется на лендингах. Пример показывает, как работать с фоном и выделять CTA.
+          </p>
+          <div class="mt-6 rounded-2xl bg-slate-900 p-6 text-slate-100">
+            <p class="text-sm uppercase tracking-[0.3em] text-violet-300">новинка</p>
+            <h3 class="mt-2 text-2xl font-semibold">Starter Kit для Astro</h3>
+            <p class="mt-3 text-sm text-slate-300">
+              Набор готовых шаблонов для блога, документации и маркетинговых страниц. Минимум настроек,
+              максимум скорости.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <span class="rounded-full bg-violet-500/20 px-4 py-1 text-xs font-semibold text-violet-200">
+                Мгновенный запуск
+              </span>
+              <span class="rounded-full bg-emerald-500/20 px-4 py-1 text-xs font-semibold text-emerald-200">
+                0.3s TTFB
+              </span>
+            </div>
+            <a
+              href="/about/"
+              class="mt-8 inline-flex items-center gap-2 rounded-full bg-violet-500 px-5 py-2 text-sm font-semibold text-white transition hover:bg-violet-400"
+            >
+              Подробнее
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="flex flex-col justify-between gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div>
+            <h2 class="text-xl font-semibold">Метрики проекта</h2>
+            <p class="mt-2 text-sm text-slate-600">
+              Компонент карточки для отчётов: число, динамика, визуализация.
+            </p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl bg-slate-900 p-5 text-white">
+              <p class="text-sm text-slate-300">Performance</p>
+              <p class="mt-4 text-3xl font-semibold">98</p>
+              <p class="mt-3 text-xs text-emerald-300">+4 пункта за последнюю неделю</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 p-5">
+              <p class="text-sm text-slate-500">Core Web Vitals</p>
+              <p class="mt-4 text-3xl font-semibold text-slate-900">Зелёная зона</p>
+              <p class="mt-3 text-xs text-emerald-600">LCP 1.6s • CLS 0.02 • FID 16ms</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-xl">
+            <h2 class="text-2xl font-semibold">Командный ритуал</h2>
+            <p class="mt-2 text-sm text-slate-600">
+              Три шага регулярной синхронизации, которые помогают держать курс и не терять фокус на продукте.
+            </p>
+          </div>
+          <a
+            href="mailto:hello@example.com"
+            class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+          >
+            Написать мне
+            <i class="fa-solid fa-paper-plane"></i>
+          </a>
+        </div>
+        <ol class="mt-8 grid gap-6 md:grid-cols-3">
+          <li class="rounded-2xl border border-slate-200 p-5">
+            <p class="text-3xl font-bold text-violet-500">01</p>
+            <h3 class="mt-3 text-lg font-semibold">Обзор метрик</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Стартуем с данных: посещаемость, конверсия, техническое здоровье. Решаем, что улучшать в первую очередь.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-slate-200 p-5">
+            <p class="text-3xl font-bold text-violet-500">02</p>
+            <h3 class="mt-3 text-lg font-semibold">Решения команды</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Обсуждаем инициативы, которые выстрелили, и фиксируем, какие эксперименты стоит продолжить.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-slate-200 p-5">
+            <p class="text-3xl font-bold text-violet-500">03</p>
+            <h3 class="mt-3 text-lg font-semibold">Следующие шаги</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Формируем план на неделю, распределяем ответственность и утверждаем контрольные точки.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl font-semibold">Коммуникация с пользователями</h2>
+        <p class="mt-1 text-sm text-slate-600">
+          Таблица помогает видеть статус обращений и быстро переключаться между каналами поддержки.
+        </p>
+        <div class="mt-6 overflow-x-auto">
+          <table class="min-w-full divide-y divide-slate-200 text-left text-sm">
+            <thead class="bg-slate-100 text-xs uppercase tracking-wide text-slate-600">
+              <tr>
+                <th class="px-4 py-3">Клиент</th>
+                <th class="px-4 py-3">Канал</th>
+                <th class="px-4 py-3">Статус</th>
+                <th class="px-4 py-3">Ответственный</th>
+                <th class="px-4 py-3">SLA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="px-4 py-3 font-medium text-slate-900">MediaFlow</td>
+                <td class="px-4 py-3">E-mail</td>
+                <td class="px-4 py-3">
+                  <span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
+                    В работе
+                  </span>
+                </td>
+                <td class="px-4 py-3">Мария</td>
+                <td class="px-4 py-3">6 часов</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-4 py-3 font-medium text-slate-900">EduSpace</td>
+                <td class="px-4 py-3">Telegram</td>
+                <td class="px-4 py-3">
+                  <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+                    Закрыт
+                  </span>
+                </td>
+                <td class="px-4 py-3">Артём</td>
+                <td class="px-4 py-3">2 часа</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium text-slate-900">HealthSync</td>
+                <td class="px-4 py-3">Slack Connect</td>
+                <td class="px-4 py-3">
+                  <span class="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700">
+                    Требует внимания
+                  </span>
+                </td>
+                <td class="px-4 py-3">Света</td>
+                <td class="px-4 py-3">1 час</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer class="pb-12 text-center text-sm text-slate-500">
+        Страница создана для демонстрации Tailwind-паттернов. Возвращайтесь, чтобы увидеть новые блоки.
+      </footer>
+    </div>
+  </body>
+</html>
